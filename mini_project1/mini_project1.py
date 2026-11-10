@@ -98,7 +98,7 @@ class Basket:
             delivery = 3000
 
         print(f"상품 합계            {total}원")
-        print(f"할인                -{discount}원 {discount_message}")
+        print(f"할인                -{discount}원 [{discount_message}]")
         print(f"배송비               {delivery}원")
         print(f"결제 금액            {total - discount + delivery}원")
 
@@ -150,7 +150,7 @@ mall.add_product(product5)
     
 def show_title():
     print("-" * 57)
-    print("1. 상품목록 2.담기 3.빼기 4.장바구니 5.쿠폰 6.결제 q.종료")
+    print("1.상품목록 2.담기 3.빼기 4.장바구니 5.쿠폰 6.결제 q.종료")
     print("-" * 57)
 
 def select_menu():
@@ -178,8 +178,10 @@ def select_menu():
         print("결제가 완료되었습니다. 감사합니다!")
 
 def main():
+    
     while True:
         show_title()
-        select_menu() 
-    
+        if select_menu() == False:
+            break
+   
 main()
